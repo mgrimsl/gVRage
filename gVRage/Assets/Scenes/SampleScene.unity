@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 273504766}
   - component: {fileID: 273504765}
   m_Layer: 0
-  m_Name: Light2 (1)
+  m_Name: Light4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,17 +307,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a2ded0989f790ed4da78993158db3054,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.91
+      value: 10.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2ded0989f790ed4da78993158db3054,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2ded0989f790ed4da78993158db3054,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.28
+      value: -18.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2ded0989f790ed4da78993158db3054,
         type: 3}
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 1146359572}
   - component: {fileID: 1146359571}
   m_Layer: 0
-  m_Name: Light1 (1)
+  m_Name: Light3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
