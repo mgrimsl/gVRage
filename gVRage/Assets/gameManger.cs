@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class gameManger : MonoBehaviour
 {
+
+    //buttons
+    public Button next;
+    public Button prev;
+
     //state
     public int state = 0;
     //objects to animate 
@@ -32,8 +39,13 @@ public class gameManger : MonoBehaviour
     AudioSource sound;
 
     // Start is called before the first frame update
+
+
     void Start()
     {
+
+        prev.onClick.AddListener(prevHandle);
+        next.onClick.AddListener(nextHandle);
         
         anim = car.GetComponent<Animator>();
         jackanim = jack.GetComponent<Animator>();
@@ -46,9 +58,20 @@ public class gameManger : MonoBehaviour
         
     }
 
-    public IEnumerator nextState()
+
+    void prevHandle()
     {
-        state = state + 1;
+        StartCoroutine(nextState(-1));
+    }
+
+    void nextHandle()
+    {
+        StartCoroutine(nextState(1));
+    }
+
+    public IEnumerator nextState(int num)
+    {
+        state = state + num;
         if (state == 1)
         {              
             sound.clip = step1;
@@ -122,15 +145,16 @@ public class gameManger : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
 
-        
 
         if (Input.GetKeyDown("right"))
         {
-            StartCoroutine(nextState());
+            Debug.Log("next");
+            StartCoroutine(nextState(1));
         }
        
     }
