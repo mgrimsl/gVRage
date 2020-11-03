@@ -46,7 +46,7 @@ public class gameManger : MonoBehaviour
         
     }
 
-    public void nextState()
+    public IEnumerator nextState()
     {
         state = state + 1;
         if (state == 1)
@@ -110,12 +110,15 @@ public class gameManger : MonoBehaviour
             jackanim.SetBool("jackpalt", false);
             anim.SetBool("carjaked", false);
             spareanim.SetBool("lower", true);
+            
+
         }
         else if (state == 9)
         {
             sound.clip = step9;
             sound.Play();
-
+            yield return new WaitForSeconds(3);
+            wrenchanim.Play("Base Layer.spin", 0, 0f);
         }
     }
 
@@ -127,7 +130,7 @@ public class gameManger : MonoBehaviour
 
         if (Input.GetKeyDown("right"))
         {
-            nextState();
+            StartCoroutine(nextState());
         }
        
     }
