@@ -1806,14 +1806,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50660904813d1344e8eb1c21ee0b9d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   next: {fileID: 28324377}
   prev: {fileID: 473764418}
+=======
+  next: {fileID: 615443835}
+  prev: {fileID: 616440086}
+>>>>>>> fe79f0bda9127034738166bd1227abed88fd1e28
   state: 0
   car: {fileID: 339803323}
   jack: {fileID: 1429242008}
   tire: {fileID: 152300668}
   wrench: {fileID: 1496333145}
   spare: {fileID: 891820944}
+  jackPlatform: {fileID: 1143950971}
   step1: {fileID: 8300000, guid: fd721bb9356c14b459b4f6fdbb23573a, type: 3}
   step2: {fileID: 8300000, guid: aec672eadfb776847ac4f041d91924ff, type: 3}
   step3: {fileID: 8300000, guid: 59378fc38d97e1d4c9423003f9e9d1f3, type: 3}
@@ -2044,6 +2050,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2140,6 +2147,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216b42154ad23a54ab9f3a7c6002515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineThickness: 2.02
+  lineIntensity: 1.04
+  fillAmount: 0.294
+  lineColor0: {r: 0, g: 0.17926931, b: 1, a: 1}
+  lineColor1: {r: 0, g: 1, b: 0, a: 1}
+  lineColor2: {r: 0, g: 0, b: 1, a: 1}
+  additiveRendering: 0
+  backfaceCulling: 1
+  fillColor: {r: 0, g: 0, b: 1, a: 1}
+  useFillColor: 0
+  cornerOutlines: 0
+  addLinesBetweenColors: 0
+  scaleWithScreenSize: 1
+  alphaCutoff: 0.5
+  flipY: 0
+  sourceCamera: {fileID: 0}
+  autoEnableOutlines: 0
+  outlineCamera: {fileID: 0}
+  outlineShaderMaterial: {fileID: 0}
+  renderTexture: {fileID: 0}
+  extraRenderTexture: {fileID: 0}
 --- !u!1 &1076770115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1532040975
 MonoBehaviour:
   m_ObjectHideFlags: 0

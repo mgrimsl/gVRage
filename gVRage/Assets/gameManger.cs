@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using cakeslice;
 
 
 public class gameManger : MonoBehaviour
@@ -19,6 +20,7 @@ public class gameManger : MonoBehaviour
     public GameObject tire;
     public GameObject wrench;
     public GameObject spare;
+    public GameObject jackPlatform;
     //audio clips to play
     public AudioClip step1;
     public AudioClip step2;
@@ -92,42 +94,65 @@ public class gameManger : MonoBehaviour
             sound.clip = step3;
             sound.Play();
 
+            jackPlatform.AddComponent<cakeslice.Outline>();
+
             jackanim.SetBool("jackpalt", true);
             anim.SetBool("carjaked", true);
             tireanim.SetBool("tireup", true);
         }
         else if (state == 4)
         {
+            Component jackOutline = jackPlatform.GetComponent<cakeslice.Outline>();
+            Destroy(jackOutline);
+
             sound.clip = step4;
             sound.Play();
+            wrench.AddComponent<cakeslice.Outline>();
             wrenchanim.SetBool("removeLugnut", true);
       
         }
         else if (state == 5)
         {
-
             sound.clip = step5;
             sound.Play();
+            tire.AddComponent<cakeslice.Outline>();
             tireanim.SetBool("tireoff", true);
             wrenchanim.SetBool("backOut", true);
 
         }
         else if (state == 6)
         {
+            Component wrenchOutline = wrench.GetComponent<cakeslice.Outline>();
+            Destroy(wrenchOutline);
+            Component tireOutline = tire.GetComponent<cakeslice.Outline>();
+            Destroy(tireOutline);
+
             sound.clip = step6;
             sound.Play();
+
+            spare.AddComponent<cakeslice.Outline>();
             tire.SetActive(false);
             spareanim.SetBool("putOn", true);
         }
         else if (state == 7)
         {
+            Component spareOutline = spare.GetComponent<cakeslice.Outline>();
+            Destroy(spareOutline);
+
             sound.clip = step7;
             sound.Play();
+
+            wrench.AddComponent<cakeslice.Outline>();
             wrenchanim.SetBool("backOut", false);
             wrenchanim.SetBool("backOn", true);
         }
         else if (state == 8)
         {
+            Component wrenchOutline = wrench.GetComponent<cakeslice.Outline>();
+            Destroy(wrenchOutline);
+
+
+
             sound.clip = step8;
             sound.Play();
             jackanim.SetBool("jackpalt", false);
