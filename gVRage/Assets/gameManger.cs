@@ -78,19 +78,20 @@ public class gameManger : MonoBehaviour
         {              
             sound.clip = step1;
             sound.Play();
-            
+            wrenchanim.SetBool("removeLugnut", false);
+
         }
         if (state == 2)
         {
             //losen lugnuts slightly before you jack car
             sound.clip = step2;
             sound.Play();
+            wrenchanim.SetBool("removeLugnut", true);
 
- 
         }
         else if (state == 3)
         {
-
+            
             sound.clip = step3;
             sound.Play();
 
@@ -104,12 +105,14 @@ public class gameManger : MonoBehaviour
         {
             Component jackOutline = jackPlatform.GetComponent<cakeslice.Outline>();
             Destroy(jackOutline);
-
+            wrenchanim.Play("spin", 0, -1);
             sound.clip = step4;
             sound.Play();
             wrench.AddComponent<cakeslice.Outline>();
             wrenchanim.SetBool("removeLugnut", true);
-      
+            wrenchanim.SetBool("backOut", false);
+
+
         }
         else if (state == 5)
         {
@@ -144,7 +147,7 @@ public class gameManger : MonoBehaviour
 
             wrench.AddComponent<cakeslice.Outline>();
             wrenchanim.SetBool("backOut", false);
-            wrenchanim.SetBool("backOn", true);
+           // wrenchanim.SetBool("backOn", true);
         }
         else if (state == 8)
         {
@@ -165,8 +168,11 @@ public class gameManger : MonoBehaviour
         {
             sound.clip = step9;
             sound.Play();
-            yield return new WaitForSeconds(3);
-            wrenchanim.Play("Base Layer.spin", 0, 0f);
+            yield return new WaitForSeconds(2);
+            wrenchanim.Play("spin", 0, -1);
+
+
+
         }
     }
 
