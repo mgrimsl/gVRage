@@ -65,3 +65,7 @@ crashlytics-build.properties
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
+gVRage/Library/SourceAssetDB
+gVRage/Library/ArtifactDB
+gVRage/Library/ShaderCache/EditorEncounteredVariants
+*.json
